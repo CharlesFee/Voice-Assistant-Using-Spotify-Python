@@ -23,7 +23,7 @@ For Macs use os.system("say " + audio)
 For Linux I think it's the same as Mac  
   
 Also you will have to change the volUp/Down and mute/unmute  
-For Mac you use os.system("sudo osascript -e \"set Volume 10\"") ranges from 0-10 and replace the volUp volDown... accordingly  
-For Linux use os.system("amixer sset \'Master\' 50%") 0% - 100% and replace the volUp volDown... accordingly  
+For Mac you use os.system("sudo osascript -e \\"set Volume 10\\"") ranges from 0-10 and replace the volUp volDown... accordingly  
+For Linux use os.system("amixer sset \\'Master\\' 50%") 0% - 100% and replace the volUp volDown... accordingly  
   
 I haven't tested step 5 but if you are having trouble just look up changing volume through command line/terminal in Linux/Mac  
