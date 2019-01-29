@@ -69,12 +69,8 @@ if token:
                 
                 print("You:"+c)
                 if 'play ' in c:
-                    if 'play' in c:
-                        c = c.replace('play ', '')
-                    if 'by' in c:
-                        c = c.replace('by ', '')
-                    elif 'bye' in c:
-                        c = c.replace('bye ', '')
+                    if 'play ' in c:
+                        c = c.replace('play ', '',1)
                     search = spotifyObject.search(q=c, limit = 1)
                     if len(search['tracks']['items']) !=0:
                         spotifyObject.start_playback(deviceID, None, [search['tracks']['items'][0]['uri']])
@@ -84,7 +80,7 @@ if token:
                         talkToMe("I could not find that song try again")
                 elif 'list ' in c:
                     if 'list' in c:
-                        c = c.replace('list ','')
+                        c = c.replace('list ','',1)
                     search = spotifyObject.user_playlists(username)
                     playlist = ""
                     for i, t in enumerate(search['items']):
@@ -92,6 +88,9 @@ if token:
                             playlist = t['uri']
                             print(playlist)
                             break
+                    if playlist == "":
+                        search = spotifyObject.search(q=c,limit = 1,offset = 0, type = 'playlist')
+                        playlist = search['playlists']['items'][0]['uri']
                     spotifyObject.start_playback(deviceID,playlist)
                     break
                 elif 'volume up' in c:
