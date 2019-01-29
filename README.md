@@ -15,7 +15,7 @@ go to edit settings in that app and make your redirect URI any URL I use https:/
 4. Change IDs in code  
 In the code there is client_id make that equal to your App's client ID as a string  
 client_secret = App's client Secret as a string  
-redirect_uri = App's redirect uri that you made in step 3  
+redirect_uri = App's redirect uri that you made in step 3 as a string  
   
 5. If you are using OSX or Linux you will have to change the talkToMe(audio) function to use your  
 computer's tts (I put it in comments in the function)  
