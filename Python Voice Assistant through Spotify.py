@@ -34,8 +34,6 @@ if token:
     #listen for commands
 
     def myCommand():
-        spotVol = 100
-        spotifyObject.volume(spotVol)
         r = sr.Recognizer()
         with sr.Microphone() as source:
             r.pause_threshold = 1
@@ -79,7 +77,7 @@ if token:
                     else:
                         talkToMe("I could not find that song try again")
                 elif 'list ' in c:
-                    if 'list' in c:
+                    if 'list ' in c:
                         c = c.replace('list ','',1)
                     search = spotifyObject.user_playlists(username)
                     playlist = ""
@@ -118,7 +116,11 @@ if token:
                     sys.exit()
                     break
             except sr.UnknownValueError:
+                spotVol = 100
+                spotifyObject.volume(spotVol)
                 myCommand()
+        spotVol = 100
+        spotifyObject.volume(spotVol)
     def volUp():
         sessions = AudioUtilities.GetAllSessions()
         for session in sessions:
