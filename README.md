@@ -1,5 +1,6 @@
 # Voice Assistant Using Spotify Python
-DO NOT SAY BY IN BETWEEN SONG NAME AND ARTIST SPOTIFY's SEARCH ENGINE DOESN'T LIKE THAT FOR ACCURATE RESULTS
+DO NOT SAY BY IN BETWEEN SONG NAME AND ARTIST SPOTIFY's SEARCH ENGINE DOESN'T LIKE THAT FOR ACCURATE RESULTS  
+I would've removed the word by but that can mess up the song name  
 Here is what you need to do:  
 SPOTIFY PREMIUM IS NEEDED!  
 1. Libraries  
