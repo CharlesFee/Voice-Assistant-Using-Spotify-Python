@@ -46,8 +46,8 @@ if token:
             print(command)
             if 'not google' in command:
                 print('How may I help you')
-                talkToMe('how may I help you')
                 spotifyObject.volume(math.floor(.3*spotVol))
+                talkToMe('how may I help you')
                 return assistant(r)
             
         #loop back to continue to listen for commands
