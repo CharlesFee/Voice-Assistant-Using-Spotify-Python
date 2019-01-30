@@ -16,6 +16,7 @@ username = 'PUT YOUR SPOTIFY USERNAME AS A STRING HERE'
 #YOU WILL NEED TO MAKE THE REDIRECT URI IN EDIT SETTINGS I made mine https://google.com/
 #TO CHANGE VOLUME FOR Mac you use os.system("sudo osascript -e \"set Volume 10\"") ranges from 0-10 and replace the volUp volDown... accordingly
 #TO CHANGE VOLUME FOR Linux use os.system("amixer sset \'Master\' 50%") 0% - 100% and replace the volUp volDown... accordingly
+spotVol = 100
 try:
     token = util.prompt_for_user_token(username, scope,client_id='', client_secret='', redirect_uri='')
 except (AttributeError, JSONDecodeError):
@@ -116,10 +117,8 @@ if token:
                     sys.exit()
                     break
             except sr.UnknownValueError:
-                spotVol = 100
                 spotifyObject.volume(spotVol)
                 myCommand()
-        spotVol = 100
         spotifyObject.volume(spotVol)
     def volUp():
         sessions = AudioUtilities.GetAllSessions()
